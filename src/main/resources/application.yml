@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: ${active:dev}
+  application:
+    name: ${appName:LocalBuddy}
+logging:
+  level:
+    ROOT: ${ROOT:"INFO"}
+  pattern:
+    level: '%5p [${spring.ziplin.service.name:${spring.application.name}} : %X{traceId}, %X{spanId}]'
